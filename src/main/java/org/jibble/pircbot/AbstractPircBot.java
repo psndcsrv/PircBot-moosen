@@ -1,5 +1,5 @@
 /* 
-Copyright Paul James Mutton, 2001-2007, http://www.jibble.org/
+Copyright Paul James Mutton, 2001-2009, http://www.jibble.org/
 
 This file is part of PircBot.
 
@@ -67,7 +67,7 @@ import org.apache.log4j.Logger;
  * 
  * @author  Paul James Mutton,
  *          <a href="http://www.jibble.org/">http://www.jibble.org/</a>
- * @version    1.4.6 (Build time: Wed Apr 11 19:20:59 2007)
+ * @version    1.5.0 (Build time: Mon Dec 14 20:07:17 2009)
  */
 public abstract class AbstractPircBot<USER extends User, CHANNEL extends Channel<USER>> implements ReplyConstants {
 
@@ -76,7 +76,7 @@ public abstract class AbstractPircBot<USER extends User, CHANNEL extends Channel
      * The definitive version number of this release of PircBot.
      * (Note: Change this before automatically building releases)
      */
-    public static final String VERSION = "1.4.6";
+    public static final String VERSION = "1.5.0";
     
     
     private static final int OP_ADD = 1;
@@ -210,6 +210,9 @@ public abstract class AbstractPircBot<USER extends User, CHANNEL extends Channel
                         _inputThread = null;
                         throw new NickAlreadyInUseException(line);
                     }
+                }
+                else if (code.equals("439")) {
+                    // No action required.
                 }
                 else if (code.startsWith("5") || code.startsWith("4")) {
                     socket.close();

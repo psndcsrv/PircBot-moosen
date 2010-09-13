@@ -4,7 +4,7 @@
   <groupId>pircbot</groupId>
   <artifactId>pircbot</artifactId>
   <packaging>jar</packaging>
-  <version>1.4.6-moosen-1.0</version>
+  <version>1.5.0-moosen-1.0</version>
   <name>pircbot</name>
   <url>http://maven.apache.org</url>
   <properties>
